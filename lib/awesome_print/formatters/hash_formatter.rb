@@ -57,7 +57,8 @@ module AwesomePrint
       end
 
       def left_width(keys)
-        result = max_key_width(keys)
+        result = 0
+        result += max_key_width(keys) unless options[:left_align]
         result += indentation if options[:indent] > 0
         result
       end
